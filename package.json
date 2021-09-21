@@ -1,6 +1,6 @@
 {
   "name": "@barklim/liquid-lib",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "description": "components library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -12,7 +12,8 @@
     "build:types": "tsc -p tsconfig.build.json",
     "format": "prettier --write .",
     "lint:format": "pretter --check .",
-    "lint": "eslint src/**",
+    "lint:js": "eslint src/**",
+    "lint": "eslint src",
     "test": "jest"
   },
   "sideEffects": false,

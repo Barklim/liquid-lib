@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useUniqueID } from '../utils/useUniqueID';
 import { Label } from './Label';
 import { Input } from './Input';
@@ -20,3 +21,7 @@ export const Field: React.FC & FieldComposition = ({ children }) => {
 Field.Label = Label;
 Field.Input = Input;
 Field.Textarea = Textarea;
+
+Field.propTypes = {
+  children: PropTypes.elementType,
+};
