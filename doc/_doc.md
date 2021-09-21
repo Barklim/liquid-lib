@@ -34,3 +34,10 @@ git add .
 git commit -m 'name'
 git push
 ```
+
+Бывает проблема с метками, которую можно фиксить следующим образом.
+```bash
+npm version minor
+git tag -d v0.1.0
+```
+
