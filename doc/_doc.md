@@ -69,6 +69,9 @@ modulePathIgnorePatterns: ['<rootDir>/src/fields'],
 npm ls react
 npm link ../app/node_modules/react
 
-npm install --save-peer react@16.12.0
-npm install --save-peer react-dom@16.12.0
+Del package.json, package-lock.json
 
+npm install --save-peer react
+npm install --save-peer react-dom
+in package.json >=16.12.0
+npm i
