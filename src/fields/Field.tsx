@@ -23,5 +23,5 @@ Field.Input = Input;
 Field.Textarea = Textarea;
 
 Field.propTypes = {
-  children: PropTypes.elementType,
+  children: PropTypes.node,
 };
