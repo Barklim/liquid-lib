@@ -41,6 +41,11 @@ git commit -m 'name'
 git push
 ```
 
+```bash
+npm version minor
+git push --follow-tags
+```
+
 Бывает проблема с метками версий пакета, которую можно фиксить следующим образом.
 ```bash
 git fetch
