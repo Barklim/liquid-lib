@@ -37,8 +37,10 @@ git push
 
 Бывает проблема с метками версий пакета, которую можно фиксить следующим образом.
 ```bash
-npm version minor
+git fetch
+git tags
 git tag -d v0.1.0
+git push origin :refs/tags/v0.1.0
 ```
 
 Проблема комманды npm ci, при публикации сборки необходимо иметь в репозитории package-lock.json
