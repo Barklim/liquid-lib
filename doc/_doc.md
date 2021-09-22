@@ -17,6 +17,12 @@ Liquid components library
 - 2.3.FieldTesting.md
 
 - 3.1.Bunling.md
+- 3.2.BuildСonfig.md
+- 3.3.TypeScriptDeclarations.md
+
+- 4.1.GithubActions.md
+- 4.2.PackagesRegistry.md
+- 4.3.Consuming.md
 
 ## TODO
 
@@ -44,4 +50,20 @@ git push origin :refs/tags/v0.1.0
 ```
 
 Проблема комманды npm ci, при публикации сборки необходимо иметь в репозитории package-lock.json
+
+## issue
+
+В `jest.config.js` добавлена строка, которая помогает исключить скрипт Field.spec.tsx, приводящий к ошибке сборки в github
+
+```bash
+modulePathIgnorePatterns: ['<rootDir>/src/fields'],
+```
+
+Проблема с дублированием экземпляров реакт
+
+npm ls react
+npm link ../app/node_modules/react
+
+npm install --save-peer react@16.12.0
+npm install --save-peer react-dom@16.12.0
 
