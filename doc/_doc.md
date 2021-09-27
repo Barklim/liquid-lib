@@ -64,14 +64,16 @@ git push origin :refs/tags/v0.1.0
 modulePathIgnorePatterns: ['<rootDir>/src/fields'],
 ```
 
-Проблема с дублированием экземпляров реакт
-
+Проблема с дублированием экземпляров реакт, что фикситься следующим образом
+```bash
 npm ls react
-npm link ../app/node_modules/react
+```
 
-Del package.json, package-lock.json
-
+Перед публикацией нужно может потребоваться удалить package.json, package-lock.json
+```bash
 npm install --save-peer react
 npm install --save-peer react-dom
 in package.json >=16.12.0
 npm i
+```
+

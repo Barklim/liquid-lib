@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Button } from '../buttons/Button';
+import { ButtonEx } from '../buttonsEx/ButtonEx';
 
 export default {
-  title: 'Library/Button',
-  component: Button,
+  title: 'Example/ButtonEx',
+  component: ButtonEx,
 } as Meta;
 
 const Template: Story = (args) => (
-  <Button {...args}>my button component</Button>
+  <ButtonEx {...args}>my button component</ButtonEx>
 );
 
 export const Default = Template.bind({});

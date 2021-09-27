@@ -4,23 +4,23 @@
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Button } from './Button';
+import { ButtonEx } from './ButtonEx';
 
 describe('Button', () => {
   it('applies default type of button', () => {
-    render(<Button>hello</Button>);
+    render(<ButtonEx>hello</ButtonEx>);
 
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
   });
 
   it('applies specific type if provided', () => {
-    render(<Button type="submit">hello</Button>);
+    render(<ButtonEx type="submit">hello</ButtonEx>);
 
     expect(screen.getByRole('button')).toHaveAttribute('type', 'submit');
   });
 
   it('applies valid attribute to element', () => {
-    render(<Button aria-label="Test">Hello</Button>);
+    render(<ButtonEx aria-label="Test">Hello</ButtonEx>);
 
     expect(screen.getByRole('button')).toHaveAttribute('aria-label', 'Test');
   });

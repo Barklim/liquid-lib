@@ -5,28 +5,33 @@ import {
   SECONDARY_TEXT_COLOR,
   PRIMARY_COLOR,
   PRIMARY_TEXT_COLOR,
-  DANGER_COLOR,
-  DANGER_TEXT_COLOR,
   DISABLED_OPACITY,
 } from '../utils/styles';
 import { ButtonProps } from './Button';
 
 const colorStyles = (p: ButtonProps) => {
-  let color = SECONDARY_TEXT_COLOR,
-    backgroundColor = SECONDARY_COLOR;
-
-  if (p.variant === 'primary') {
-    color = PRIMARY_TEXT_COLOR;
+  let color = PRIMARY_TEXT_COLOR,
     backgroundColor = PRIMARY_COLOR;
-  } else if (p.variant === 'danger') {
-    color = DANGER_TEXT_COLOR;
-    backgroundColor = DANGER_COLOR;
+
+  if (p.variant === 'secondary') {
+    color = SECONDARY_TEXT_COLOR;
+    backgroundColor = SECONDARY_COLOR;
   }
 
   return css`
     color: ${color};
     background-color: ${backgroundColor};
     border-color: ${backgroundColor};
+    border-radius: 8px;
+    height: 40px;
+    filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: center;
 
     &:focus-visible {
       border-color: ${color};
@@ -37,31 +42,12 @@ const colorStyles = (p: ButtonProps) => {
 
 export const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
-  display: ${(p) => (p.isFullWidth ? 'block' : 'inline-block')};
-  width: ${(p) => p.isFullWidth && '100%'};
+  display: block;
+  width: 100%;
   font-weight: 400;
   text-align: center;
-  vertical-align: middle;
   user-select: none;
   border: 1px solid transparent;
-  padding: ${(p) => {
-    if (p.size === 'large') {
-      return '0.5rem 1rem';
-    } else if (p.size === 'small') {
-      return '0.25rem 0.5rem';
-    }
-
-    return '0.4rem 0.75rem';
-  }};
-  font-size: ${(p) => {
-    if (p.size === 'large') {
-      return '1.25rem';
-    } else if (p.size === 'small') {
-      return '0.875rem';
-    }
-
-    return '1rem';
-  }};
   line-height: 1.5;
   border-radius: 0;
   transition: all 0.15s ease-in-out;
