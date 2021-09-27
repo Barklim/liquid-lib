@@ -21,7 +21,7 @@ export interface PageHeaderProps
 }
 
 export const PageHeader = React.forwardRef<HTMLHeadElement, PageHeaderProps>(
-  ({ children, isAuth, userName, ...props }, ref) => {
+  ({ isAuth, userName, ...props }, ref) => {
     return (
       <StyledPageHeader ref={ref} isAuth={isAuth} {...props}>
         <LeftSide>

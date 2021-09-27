@@ -3,8 +3,8 @@ import { transparentize } from 'polished';
 import { PRIMARY_COLOR, IMG_LOGO, IMG_FLAG, IMG_AVATAR } from '../utils/styles';
 import { PageHeaderProps } from './PageHeader';
 
-const colorStyles = (p: PageHeaderProps) => {
-  let color = '#000',
+const colorStyles = () => {
+  const color = '#000',
     backgroundColor = '#fff';
 
   return css`

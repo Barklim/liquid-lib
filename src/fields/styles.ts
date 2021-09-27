@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { transparentize } from 'polished';
 import { PRIMARY_COLOR } from '../utils/styles';
 import { PhoneProps } from './Phone';
 import { TextareaProps } from './Textarea';
