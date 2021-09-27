@@ -14,10 +14,10 @@ export const Phone = React.forwardRef<
   PhoneProps & React.ComponentPropsWithoutRef<'div'>
 >(({ isClear, ...props }, ref) => {
   const id = useContext(FieldContext);
-  const [value, setValue] = useState('+7');
+  const [value, setValue] = useState<string | undefined>();
 
-  const handleOnChange = (value: any, isClear: boolean = true) => {
-    setValue;
+  const handleOnChange = (value: string | undefined) => {
+    setValue(value);
   };
 
   return (
