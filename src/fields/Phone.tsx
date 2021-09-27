@@ -16,7 +16,7 @@ export const Phone = React.forwardRef<
   const id = useContext(FieldContext);
   const [value, setValue] = useState('+7');
 
-  const handleOnChange = (value: any, isClear: boolean) => {
+  const handleOnChange = (value: any, isClear: boolean = true) => {
     setValue;
   };
 
