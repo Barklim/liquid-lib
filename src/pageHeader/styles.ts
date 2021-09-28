@@ -19,25 +19,6 @@ const colorStyles = () => {
   `;
 };
 
-const logoStyles = (p: PageHeaderProps) => {
-  const iLogo = p.iLogo;
-
-  return css`
-    &::after {
-      background-image: url(${iLogo});
-    }
-  `;
-};
-const flagStyles = (p: PageHeaderProps) => {
-  const iFlag = p.iFlag;
-
-  return css`
-    &::after {
-      background-image: url(${iFlag});
-    }
-  `;
-};
-
 export const StyledPageHeader = styled.header<PageHeaderProps>`
   cursor: auto;
   display: flex;
@@ -74,26 +55,30 @@ export const LeftSide = styled.div`
 `;
 
 export const Logo = styled.div<PageHeaderProps>`
-  width: 122px;
-  margin: 0 28px 0 50px;
-  bottom: 5px;
-  position: relative;
+  display: flex;
+  align-items: center;
 
-  ${logoStyles}
-  &::after {
-    content: '';
-    /* background-image: url(${IMG_LOGO}); */
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    display: block;
-    position: absolute;
-    top: 0;
+  img {
     width: 122px;
-    height: 100%;
-  }
-  @media (max-width: 768px) {
-    margin: 0 28px 0 20px;
+    margin: 0 28px 0 50px;
+    bottom: 5px;
+    position: relative;
+
+    &::after {
+      content: '';
+      /* background-image: url(${IMG_LOGO}); */
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 122px;
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      margin: 0 28px 0 20px;
+    }
   }
 `;
 
@@ -112,13 +97,11 @@ export const RightSide = styled.div`
 `;
 
 export const Flag = styled.div`
-  margin-right: 16px;
-  background-blend-mode: overlay;
+  img {
+    margin-right: 16px;
+    background-blend-mode: overlay;
 
-  ${flagStyles}
-  &::after {
     content: '';
-    /* background-image: url(${IMG_FLAG}); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -189,9 +172,9 @@ export const Avatar = styled.div<PageHeaderProps>`
   position: absolute;
   float: left;
   margin-left: 16px;
-  &::after {
+  img {
     content: '';
-    background-image: url(${IMG_AVATAR});
+    /* background-image: url(${IMG_AVATAR}); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

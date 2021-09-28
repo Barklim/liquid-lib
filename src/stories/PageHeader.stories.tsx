@@ -16,6 +16,7 @@ export const Default = Template.bind({});
 Default.args = {
   isAuth: false,
   userName: 'Иван Иванов',
-  iFlag: './rus.svg',
-  iLogo: './logo.png',
+  iLogoComp: <img src={'./logo.png'} />,
+  iFlagComp: <img src={'./rus.svg'} />,
+  iAvatarComp: <img src={'./avatar.jpg'} />,
 };

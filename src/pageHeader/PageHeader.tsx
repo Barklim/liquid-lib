@@ -18,24 +18,25 @@ export interface PageHeaderProps
   extends React.ComponentPropsWithoutRef<'header'> {
   isAuth?: boolean;
   userName?: string;
-  iFlag?: string;
-  iLogo?: string;
+  iLogoComp?: JSX.Element;
+  iFlagComp?: JSX.Element;
+  iAvatarComp?: JSX.Element;
 }
 
 export const PageHeader = React.forwardRef<HTMLHeadElement, PageHeaderProps>(
-  ({ isAuth, userName, iFlag, iLogo, ...props }, ref) => {
+  ({ isAuth, userName, iLogoComp, iFlagComp, iAvatarComp, ...props }, ref) => {
     return (
       <StyledPageHeader ref={ref} isAuth={isAuth} {...props}>
         <LeftSide>
-          <Logo iLogo={iLogo}></Logo>
+          <Logo>{iLogoComp}</Logo>
           <Middle>Снимайте заработанные деньги в любой день</Middle>
         </LeftSide>
         <RightSide>
-          <Flag iFlag={iFlag}></Flag>
+          <Flag>{iFlagComp}</Flag>
           <WrapLogin>
             <Separator></Separator>
             {isAuth && <UserName>👋 &nbsp; Привет, {userName}</UserName>}
-            {isAuth && <Avatar></Avatar>}
+            {isAuth && <Avatar>{iAvatarComp}</Avatar>}
             {!isAuth && <Login>Войти</Login>}
           </WrapLogin>
         </RightSide>
@@ -50,13 +51,15 @@ PageHeader.propTypes = {
   children: PropTypes.node,
   isAuth: PropTypes.bool,
   userName: PropTypes.string,
-  iFlag: PropTypes.string,
-  iLogo: PropTypes.string,
+  iLogoComp: PropTypes.any,
+  iFlagComp: PropTypes.any,
+  iAvatarComp: PropTypes.any,
 };
 
 PageHeader.defaultProps = {
   isAuth: false,
   userName: 'Иван Иванов',
-  iFlag: './rus.svg',
-  iLogo: './logo.png',
+  iLogoComp: <img src={'./logo.png'} />,
+  iFlagComp: <img src={'./rus.svg'} />,
+  iAvatarComp: <img src={'./avatar.jpg'} />,
 };
