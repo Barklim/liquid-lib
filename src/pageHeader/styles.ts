@@ -19,6 +19,25 @@ const colorStyles = () => {
   `;
 };
 
+const logoStyles = (p: PageHeaderProps) => {
+  const iLogo = p.iLogo;
+
+  return css`
+    &::after {
+      background-image: url(${iLogo});
+    }
+  `;
+};
+const flagStyles = (p: PageHeaderProps) => {
+  const iFlag = p.iFlag;
+
+  return css`
+    &::after {
+      background-image: url(${iFlag});
+    }
+  `;
+};
+
 export const StyledPageHeader = styled.header<PageHeaderProps>`
   cursor: auto;
   display: flex;
@@ -54,14 +73,16 @@ export const LeftSide = styled.div`
   color: #b8c2c7;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.div<PageHeaderProps>`
   width: 122px;
   margin: 0 28px 0 50px;
   bottom: 5px;
   position: relative;
+
+  ${logoStyles}
   &::after {
     content: '';
-    background-image: url(${IMG_LOGO});
+    /* background-image: url(${IMG_LOGO}); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -76,7 +97,7 @@ export const Logo = styled.div`
   }
 `;
 
-export const Middle = styled.div<PageHeaderProps>`
+export const Middle = styled.div`
   display: flex;
   align-items: center;
   margin-right: 4px;
@@ -93,9 +114,11 @@ export const RightSide = styled.div`
 export const Flag = styled.div`
   margin-right: 16px;
   background-blend-mode: overlay;
+
+  ${flagStyles}
   &::after {
     content: '';
-    background-image: url(${IMG_FLAG});
+    /* background-image: url(${IMG_FLAG}); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

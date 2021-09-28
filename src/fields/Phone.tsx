@@ -3,14 +3,33 @@ import PropTypes from 'prop-types';
 import { StyledPhone, Close } from './styles';
 import { FieldContext } from './FieldContext';
 import Input from 'react-phone-number-input/input';
-import './styles.css';
+// import CSS from 'csstype';
+// import * as CSS from 'csstype';
+
+// const inlineStylePhone: CSS.Properties = {
+//   display: 'block',
+//   width: '100%',
+//   padding: '0.5rem 0.4rem ',
+//   paddingLeft: '0',
+//   fontSize: '1rem !important',
+//   lineHeight: '1.5',
+//   color: '#2b2a29',
+//   // strange effect
+//   // backgroundColor: 'transparent',
+//   border: 'none',
+//   borderBottom: '1px solid #b8c2c7',
+//   appearance: 'none',
+//   borderRadius: '0',
+//   transition: 'all 0.15s ease-in-out',
+// };
+// const pseudos: { [P in CSS.SimplePseudos]?: CSS.Properties } = {
+//   ':hover': {
+//     display: 'none',
+//   },
+// };
 
 export interface PhoneProps {
   isClear?: boolean;
-}
-
-function test1(obj: PhoneProps) {
-  obj.isClear = false;
 }
 
 export const Phone = React.forwardRef<
@@ -34,7 +53,6 @@ export const Phone = React.forwardRef<
 
   return (
     <StyledPhone ref={ref} id={id} {...props}>
-      <Close isClear={clear} onClick={handleClick}></Close>
       <Input
         country="RU"
         international={true}
@@ -42,7 +60,9 @@ export const Phone = React.forwardRef<
         value={value}
         onChange={handleOnChange}
         className={'input'}
+        // style={inlineStylePhone}
       />
+      <Close isClear={clear} onClick={handleClick}></Close>
     </StyledPhone>
   );
 });

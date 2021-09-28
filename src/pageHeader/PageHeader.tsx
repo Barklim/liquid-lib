@@ -18,18 +18,20 @@ export interface PageHeaderProps
   extends React.ComponentPropsWithoutRef<'header'> {
   isAuth?: boolean;
   userName?: string;
+  iFlag?: string;
+  iLogo?: string;
 }
 
 export const PageHeader = React.forwardRef<HTMLHeadElement, PageHeaderProps>(
-  ({ isAuth, userName, ...props }, ref) => {
+  ({ isAuth, userName, iFlag, iLogo, ...props }, ref) => {
     return (
       <StyledPageHeader ref={ref} isAuth={isAuth} {...props}>
         <LeftSide>
-          <Logo></Logo>
+          <Logo iLogo={iLogo}></Logo>
           <Middle>Снимайте заработанные деньги в любой день</Middle>
         </LeftSide>
         <RightSide>
-          <Flag></Flag>
+          <Flag iFlag={iFlag}></Flag>
           <WrapLogin>
             <Separator></Separator>
             {isAuth && <UserName>👋 &nbsp; Привет, {userName}</UserName>}
@@ -48,9 +50,13 @@ PageHeader.propTypes = {
   children: PropTypes.node,
   isAuth: PropTypes.bool,
   userName: PropTypes.string,
+  iFlag: PropTypes.string,
+  iLogo: PropTypes.string,
 };
 
 PageHeader.defaultProps = {
   isAuth: false,
   userName: 'Иван Иванов',
+  iFlag: './rus.svg',
+  iLogo: './logo.png',
 };

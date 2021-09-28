@@ -62,4 +62,10 @@ export const StyledButton = styled.button<ButtonProps>`
     cursor: inherit;
     opacity: ${DISABLED_OPACITY};
   }
+  &:hover {
+    background-color: #1389cd;
+  }
+  &:active {
+    background-color: #117dbb;
+  }
 `;
